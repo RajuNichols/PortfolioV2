@@ -31,7 +31,7 @@ const About = () => {
       id="about"
       className="w-screen h-auto py-20 flex flex-col md:flex-row justify-center items-start overflow-x-hidden bg-gray-100 px-8 md:px-16"
     >
-      <div className="w-full md:w-1/2 space-y-5 mx-auto text-center md:text-left">
+      <div className="w-full md:w-1/2 space-y-10 mx-auto text-center md:text-left md:mr-8 md:max-w-3/4">
         <h2 className="text-4xl md:text-5xl text-blue-600 font-bold mb-8">
           About
         </h2>
@@ -41,10 +41,16 @@ const About = () => {
             Background
           </h3>
           <p className="text-m text-gray-500">
-            I&apos;m a Software Developer at <span className="text-blue-600 font-bold">Shamrock Trading Corporation</span> and a
-            recent graduate from the <span className="text-blue-600 font-bold">University of Missouri-Columbia</span>. I excel at
-            blending coding and design to create efficient, user-friendly
-            applications.
+            I&apos;m a Software Developer at{" "}
+            <span className="text-blue-600 font-bold">
+              Shamrock Trading Corporation
+            </span>{" "}
+            and a recent graduate from the{" "}
+            <span className="text-blue-600 font-bold">
+              University of Missouri-Columbia
+            </span>
+            . I excel at blending coding and design to create efficient,
+            user-friendly applications.
           </p>
         </div>
 
@@ -62,13 +68,13 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col text-center md:flex-row md:flex-wrap md:items-start justify-center md:justify-between w-full md:pl-72 mt-20">
-        <div className="w-full md:w-1/2 md:flex md:flex-col">
-          <div>
-            <h4 className="text-xl md:text-2xl text-blue-600 font-semibold mb-2">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:mx-auto mt-5 md:mt-16">
+        <div className="flex flex-col md:flex-row justify-around items-start w-full">
+          <div className="w-full md:w-1/2 flex flex-col items-center mt-5">
+            <h4 className="text-xl md:text-2xl text-blue-600 font-semibold mb-2 text-center">
               Languages
             </h4>
-            <div className="flex gap-2 flex-wrap justify-between md:justify-center mt-4">
+            <div className="flex gap-2 flex-wrap justify-center mt-4">
               {programmingLanguages.map((skill, index) => (
                 <div
                   key={index}
@@ -84,14 +90,14 @@ const About = () => {
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="w-full md:w-1/2 md:flex md:flex-col mt-5 md:mt-0 border-left">
-          <div>
-            <h4 className="text-xl md:text-2xl text-blue-600 font-semibold mb-2 md:ml-10">
+          <div className="hidden md:flex md:self-stretch border-gray-500  md:border-l md:mx-6"></div>
+
+          <div className="w-full md:w-1/2 flex flex-col items-center mt-5 border-left">
+            <h4 className="text-xl md:text-2xl text-blue-600 font-semibold mb-2 text-center">
               Technical
             </h4>
-            <div className="flex gap-2 flex-wrap justify-between md:justify-center mt-4 md:ml-14">
+            <div className="flex gap-2 flex-wrap justify-center mt-4">
               {technicalSkills.map((skill, index) => (
                 <div
                   key={index}
@@ -108,17 +114,20 @@ const About = () => {
             </div>
           </div>
         </div>
-                  
-      
 
-        <div className="w-full md:w-full mt-10 md:mt-10">
-          <h3 className="text-2xl md:text-2xl text-blue-600 font-semibold mb-2">
+        <div className="w-full my-auto mt-10 text-center">
+          <h3 className="text-xl md:text-2xl text-blue-600 font-semibold mb-2 text-center">
             Experience
           </h3>
           <ul className="space-y-1 text-m text-gray-500">
-            {experiences.map((experience, index) => (
-              <li key={index}>{experience}</li>
-            ))}
+            {experiences.map((experience, index) => {
+              const [company, role] = experience.split(" - ");
+              return (
+                <li key={index}>
+                  {company} - <span className="text-blue-600 font-bold">{role}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
