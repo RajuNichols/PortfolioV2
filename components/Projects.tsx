@@ -75,15 +75,100 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-screen h-auto py-20 flex flex-col md:flex-row text-center md:text-center overflow-x-hidden bg-gray-100 px-8 md:px-16"
+      className="w-screen h-auto py-20 flex flex-col text-center overflow-x-hidden bg-gray-100 px-8 md:px-16"
     >
-      <div className="md:text-center">
-        <h2 className="text-4xl md:text-5xl text-blue-600 font-bold md:text-left mb-10">
+      <div className="md:text-left">
+        <h2 className="text-4xl md:text-5xl text-blue-600 font-bold mb-10">
           Projects
         </h2>
       </div>
-      <div className="w-full md:w-1/2 mb-14">
-        <div className="relative">
+      <div className="md:flex-row flex flex-col">
+        <div className="w-full md:w-1/2 mb-14">
+          <div className="relative">
+            {allImagesLoaded ? (
+              <Carousel
+                selectedItem={currentSlide}
+                onChange={setCurrentSlide}
+                showArrows={false}
+                showIndicators={false}
+                className="w-full h-full"
+                infiniteLoop={true}
+                showStatus={false}
+              >
+                {projects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-center  w-full h-full"
+                  >
+                    <div className="relative">
+                      <Image
+                        onLoad={() => handleImageLoad(index)}
+                        className="object-cover w-full h-full"
+                        src={project.image}
+                        alt={project.title}
+                        fill={false}
+                        width={1600}
+                        height={900}
+                        sizes="max-width: 600px) 300px, (max-width: 900px) 600px, 1280px"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </Carousel>
+            ) : (
+              <p>Loading images...</p>
+            )}
+            <div className="sm:bottom-4 md:bottom-4 left-0 right-0 flex justify-center space-x-4 mt-5">
+              <button
+                className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
+                onClick={prevSlide}
+              >
+                <FiChevronLeft size={24} />
+              </button>
+              <button
+                className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
+                onClick={nextSlide}
+              >
+                <FiChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 space-y-6 text-center flex flex-col justify-normal items-center">
+          <h2 className="text-2xl text-blue-600 font-semibold">
+            {projects[currentSlide].title}
+          </h2>
+          <h3 className="text-m text-gray-500 mb-2">
+            {projects[currentSlide].desc}
+          </h3>
+          <div className="flex justify-center flex-wrap">
+            {projects[currentSlide].tools.split(", ").map((tool, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-sm text-blue-600 border border-blue-600 mb-6 mr-2 hover:bg-blue-600 hover:text-white transition-colors duration-200"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={projects[currentSlide].githubUrl}
+            className="mt-6 px-4 py-2 border bg-blue-600 text-white rounded hover:bg-blue-700 shadow hover:text-white transition-colors duration-200 self-center"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
+
+{
+  /* <div className="relative">
           {allImagesLoaded ? (
             <Carousel
               selectedItem={currentSlide}
@@ -131,10 +216,11 @@ const Projects = () => {
               <FiChevronRight size={24} />
             </button>
           </div>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 space-y-6 text-center md:text-center flex flex-col justify-center">
-        <h2 className="text-2xl text-blue-600 font-semibold">
+        </div> */
+}
+
+{
+  /* <h2 className="text-2xl text-blue-600 font-semibold">
           {projects[currentSlide].title}
         </h2>
         <h3 className="text-m text-gray-500 mb-2">
@@ -157,10 +243,5 @@ const Projects = () => {
           className="mt-6 px-4 py-2 border bg-blue-600 text-white rounded hover:bg-blue-700 shadow  hover:text-white transition-colors duration-200 self-center"
         >
           View on GitHub
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default Projects;
+        </a> */
+}
