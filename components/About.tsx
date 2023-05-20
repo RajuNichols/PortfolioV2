@@ -4,20 +4,20 @@ import Image from "next/image";
 const About = () => {
   // These arrays should be replaced with your actual skills and experiences
   const programmingLanguages = [
-    "/../public/csharp.png",
-    "/../public/java.png",
-    "/../public/javascript.png",
-    "/../public/typescript.png",
-    "/../public/pythonlogo.png",
-    "/../public/C.png",
+    "/csharp.png",
+    "/java.png",
+    "/javascript.png",
+    "/typescript.png",
+    "/pythonlogo.png",
+    "/C.png",
   ];
   const technicalSkills = [
-    "/../public/html.png",
-    "/../public/css.png",
-    "/../public/github.png",
-    "/../public/node.png",
-    "/../public/react.png",
-    "/../public/sql.png",
+    "/html.png",
+    "/css.png",
+    "/github.png",
+    "/node.png",
+    "/react.png",
+    "/sql.png",
   ];
   const experiences = [
     "Shamrock Trading Corporation - Software Developer",
