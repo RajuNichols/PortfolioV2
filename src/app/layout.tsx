@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar'
 import './globals.css'
 import { Poppins } from 'next/font/google'
 
@@ -10,6 +9,9 @@ const poppins = Poppins({
 export const metadata = {
   title: 'Raju Nichols',
   description: 'Raju Nichols Portfolio',
+  icons:{
+    icon: '/metest.png'
+  }
 }
 
 export default function RootLayout({
