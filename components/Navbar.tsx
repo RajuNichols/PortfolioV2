@@ -55,10 +55,9 @@ function Navbar() {
               </div>
               {isMobile ? (
                 <>
-                  <div className="flex items-center justify-center flex-grow">
                     <button
                       onClick={switchTheme}
-                      className={`cursor-pointer mx-auto ${linkClasses} py-2 rounded-md text-sm font-medium transition-colors duration-200 ml-auto`}
+                      className={`cursor-pointer ${linkClasses} py-2 rounded-md text-sm font-medium transition-colors duration-200 go-left flex relative`}
                     >
                       {theme === "dark" ? (
                         <FontAwesomeIcon icon={faSun} />
@@ -99,10 +98,9 @@ function Navbar() {
                         )}
                       </button>
                     </div>
-                  </div>
                 </>
               ) : (
-                <div className="hidden md:block">
+                <div className="hidden md:block items-center">
                   <div className="ml-10 flex items-baseline space-x-4">
                     <Scrollspy
                       items={["home", "about", "projects", "contact"]}
