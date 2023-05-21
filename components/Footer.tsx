@@ -9,7 +9,7 @@ const Footer = () => {
   const { theme } = useTheme();
 
   const footerClasses =
-    theme === "dark" ? "bg-zinc-900 text-white" : "bg-white";
+    theme === "dark" ? "bg-zinc-800 text-white" : "bg-white";
   const iconClasses = theme === "dark" ? "text-white" : "text-black";
 
   return (
