@@ -44,7 +44,7 @@ function Navbar() {
             <div className="flex items-center mx-14 justify-between w-full">
               <div className="flex justify-center items-center flex-shrink-0">
                 <Link
-                  to="about"
+                  to="home"
                   smooth={true}
                   offset={0}
                   duration={500}
