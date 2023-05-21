@@ -18,19 +18,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
-  const { theme, setTheme } = useTheme();
-
-  const switchTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   return (
     <html lang="en">
       <body className={poppins.className}>
         <ThemeProvider enableSystem={true} attribute="class">
-          <button onClick={switchTheme}>
-            Toggle Theme
-          </button>
           {children}
         </ThemeProvider>
       </body>
