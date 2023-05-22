@@ -27,7 +27,7 @@ const Projects = () => {
     {
       image: "/websitev1.jpg",
       title: "Peronal Portfolio Website V1",
-      tools: "React, TypeScript, SaSS, Email.js",
+      tools: "React, Javascript, SaSS, Email.js",
       desc: "This portfolio website represented my debut in Web Development and was my introduction to React. It was a pivotal learning tool, deepening my understanding of React's mechanics and illuminating the finer aspects of web development.",
       githubUrl: "https://github.com/RajuNichols/portfoliov1",
     },
