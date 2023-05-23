@@ -16,9 +16,9 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // 3000 milliseconds (3 seconds) delay
+    }, 1500); 
 
-    return () => clearTimeout(timer); // Clean up the timer on component unmount
+    return () => clearTimeout(timer); 
   }, []);
   return (
     <>
@@ -34,7 +34,7 @@ export default function Home() {
           <Lottie animationData={animationData} />
         </div>
       ) : (
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="dark" enableSystem={false} attribute="class">
           <Navbar />
           <Hero />
           <About />
