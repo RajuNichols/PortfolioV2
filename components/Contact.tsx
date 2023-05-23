@@ -16,7 +16,7 @@ const Contact = () => {
 
   useEffect(() => {
     if (inView) {
-      setVisibility("visible animate-fadeInUp"); 
+      setVisibility("visible animate-fadeInRight"); 
     }
   }, [inView]);
   

@@ -52,43 +52,33 @@ body{
   0% {
     opacity: 0;
     transform: translateX(100px);
+    filter: blur(5px);
   }
   100% {
     opacity: 1;
+    filter: blur(0);
     transform: translateX(0);
   }
 }
 
 .animate-fadeInRight {
-  animation: fadeInRight 2s;
+  animation: fadeInRight 1s;
 }
 
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
+    filter: blur(5px);
     transform: translateX(-100px);
   }
   100% {
     opacity: 1;
+    filter: blur(0);
     transform: translateX(0);
   }
 }
 
 .animate-fadeInLeft {
-  animation: fadeInLeft 2s;
+  animation: fadeInLeft 1s;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 2s;
-}
