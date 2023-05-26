@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.5,
   });
 
   const [visibility, setVisibility] = useState("invisible");

@@ -9,7 +9,7 @@ const Contact = () => {
   const { theme } = useTheme();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.7,
   });
 
   const [visibility, setVisibility] = useState("invisible");

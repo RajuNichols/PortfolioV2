@@ -12,7 +12,7 @@ const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.6,
   });
 
   const [visibility, setVisibility] = useState("invisible");
